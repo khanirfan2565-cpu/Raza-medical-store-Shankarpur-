@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Raza Medical Store</title>
+  <style>
+    *{box-sizing:border-box} body{margin:0;font-family:Arial,sans-serif;background:#f5f8fb;color:#17324d}
+    header{background:#0b7a75;color:white;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;gap:15px;position:sticky;top:0;z-index:5}
+    .brand{font-size:24px;font-weight:800}.sub{font-size:13px;opacity:.9}
+    .cart{background:white;color:#0b7a75;border:0;border-radius:22px;padding:10px 15px;font-weight:700}
+    .hero{padding:35px 6%;display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;background:white}
+    .hero h1{font-size:42px;margin:0 0 12px}.hero p{font-size:18px;line-height:1.5}
+    .hero img{width:100%;max-height:420px;object-fit:cover;border-radius:18px;box-shadow:0 8px 25px #0002}
+    .btn{display:inline-block;background:#0b7a75;color:#fff;text-decoration:none;border:0;border-radius:10px;padding:12px 18px;font-weight:700;cursor:pointer}
+    main{padding:30px 6%}.section-title{display:flex;justify-content:space-between;align-items:center;gap:10px}
+    .notice{background:#fff3cd;border-left:5px solid #e0a800;padding:14px 16px;border-radius:8px;margin:18px 0}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .card{background:white;border-radius:14px;padding:18px;box-shadow:0 3px 12px #0000000d}
+    .icon{font-size:35px}.card h3{margin:10px 0 6px}.price{font-weight:800;color:#0b7a75;margin:10px 0}
+    footer{background:#17324d;color:white;padding:28px 6%;margin-top:30px}
+    .modal{display:none;position:fixed;inset:0;background:#0008;align-items:center;justify-content:center;padding:20px;z-index:10}
+    .modal-box{background:white;border-radius:15px;max-width:480px;width:100%;padding:22px}.modal-box input,.modal-box textarea{width:100%;padding:11px;margin:7px 0;border:1px solid #ccd6df;border-radius:8px}
+    @media(max-width:800px){.hero{grid-template-columns:1fr}.hero h1{font-size:32px}.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:480px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<header>
+  <div><div class="brand">Raza Medical Store</div><div class="sub">आपकी स्थानीय मेडिकल शॉप</div></div>
+  <button class="cart" onclick="openOrder()">🛒 ऑर्डर पूछताछ</button>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>दवाइयाँ और हेल्थकेयर सामान</h1>
+    <p>Raza Medical Store में उपलब्ध स्वास्थ्य संबंधी उत्पादों के बारे में जानकारी लें और ऑर्डर/उपलब्धता के लिए हमसे संपर्क करें।</p>
+    <button class="btn" onclick="openOrder()">WhatsApp / ऑर्डर पूछें</button>
+    <p class="sub" style="color:#555">मोबाइल: 7089288467</p>
+  </div>
+  <img src="storefront.jpg" alt="Raza Medical Store">
+</section>
+
+<main>
+  <div class="section-title"><h2>श्रेणियाँ</h2></div>
+  <div class="notice"><b>महत्वपूर्ण:</b> प्रिस्क्रिप्शन वाली दवाइयों के लिए वैध डॉक्टर का प्रिस्क्रिप्शन और फार्मासिस्ट की जाँच आवश्यक है। वेबसाइट केवल उपलब्धता/पूछताछ के लिए है।</div>
+
+  <div class="grid">
+    <div class="card"><div class="icon">💊</div><h3>OTC हेल्थकेयर</h3><p>बिना प्रिस्क्रिप्शन उपलब्ध पात्र उत्पादों की जानकारी।</p></div>
+    <div class="card"><div class="icon">🩹</div><h3>मेडिकल सप्लाई</h3><p>बैंडेज और सामान्य मेडिकल सप्लाई की उपलब्धता पूछें।</p></div>
+    <div class="card"><div class="icon">🧴</div><h3>पर्सनल केयर</h3><p>व्यक्तिगत देखभाल से जुड़े उत्पाद।</p></div>
+    <div class="card"><div class="icon">🩺</div><h3>हेल्थ डिवाइस</h3><p>उपलब्ध स्वास्थ्य उपकरणों के बारे में पूछें।</p></div>
+  </div>
+
+  <h2 style="margin-top:35px">कैसे ऑर्डर करें?</h2>
+  <div class="grid">
+    <div class="card"><b>1. सामान चुनें</b><p>जिस उत्पाद की जरूरत है उसका नाम भेजें।</p></div>
+    <div class="card"><b>2. उपलब्धता पूछें</b><p>दुकान से स्टॉक और कीमत की पुष्टि करें।</p></div>
+    <div class="card"><b>3. प्रिस्क्रिप्शन</b><p>जहाँ आवश्यक हो, वैध प्रिस्क्रिप्शन दें।</p></div>
+    <div class="card"><b>4. डिलीवरी/पिकअप</b><p>उपलब्ध स्थानीय विकल्प दुकान से तय करें।</p></div>
+  </div>
+</main>
+
+<footer>
+  <h3>Raza Medical Store</h3>
+  <p>📞 7089288467</p>
+  <p>ऑनलाइन उपलब्धता और ऑर्डर पूछताछ के लिए संपर्क करें।</p>
+</footer>
+
+<div class="modal" id="modal" onclick="if(event.target===this)closeOrder()">
+  <div class="modal-box">
+    <h2>ऑर्डर पूछताछ</h2>
+    <input id="name" placeholder="आपका नाम">
+    <input id="product" placeholder="सामान / उत्पाद का नाम">
+    <textarea id="msg" rows="3" placeholder="अतिरिक्त जानकारी"></textarea>
+    <button class="btn" onclick="sendWhatsApp()">WhatsApp पर भेजें</button>
+    <button style="margin-left:8px;padding:11px;border:0;background:#eee;border-radius:10px" onclick="closeOrder()">बंद करें</button>
+  </div>
+</div>
+
+<script>
+function openOrder(){document.getElementById('modal').style.display='flex'}
+function closeOrder(){document.getElementById('modal').style.display='none'}
+function sendWhatsApp(){
+  const n=document.getElementById('name').value.trim();
+  const p=document.getElementById('product').value.trim();
+  const m=document.getElementById('msg').value.trim();
+  const text=`नमस्ते Raza Medical Store,%0Aनाम: ${encodeURIComponent(n)}%0Aउत्पाद: ${encodeURIComponent(p)}%0Aजानकारी: ${encodeURIComponent(m)}`;
+  window.open('https://wa.me/917089288467?text='+text,'_blank');
+}
+</script>
+</body>
+</html>
